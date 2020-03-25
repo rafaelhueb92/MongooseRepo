@@ -1,0 +1,1 @@
+module.exports = mongoURL => require("./lib")(mongoURL);
