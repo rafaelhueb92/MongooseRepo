@@ -1,5 +1,5 @@
 {
-  "name": "mongooseRepo",
+  "name": "simple-mongooserepo",
   "author": {
     "name": "Rafael Hueb",
     "email": "rafaelhueb92@gmail.com"
@@ -8,6 +8,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "mongoose": "^5.9.6"
   }
 }

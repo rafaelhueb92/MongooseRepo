@@ -1,20 +1,32 @@
-const MONGO_URL = "http://localhost:3000";
-const mongoose = require("./lib")(MONGO_URL); // Change "./lib" to "mongoseRepo"
-const Repository = require("./lib/repository");
-
-const definition = {
+const schema = {
     name: String,
+    senha: "password",
     age: Number
-};
-
-const options = {
-    timeStamps: true
 }
 
-const Person = mongoose.createRepository("person", definition, options);
+const MONGO_URL = "";
+const db = require("./")(MONGO_URL);
+const Repository = require("./lib/repository");
+const utils = require("./lib/utils");
+const model = db.createModel("person", schema);
 
-class PersonRepo extends Repository{
-    constructor(){
-        super(Person)
+db.connect();
+
+class PersonRepo extends Repository {
+    constructor() {
+        super(model);
     }
 }
+
+const personRepo = new PersonRepo();
+const args = {
+    name: "Gabriel",
+    senha: "1234",
+    age: 27
+};
+personRepo.insert(args).then(_ => model.findOne({ name: "Gabriel" }).then(res => {
+    const { senha } = res;
+    utils.comparePassword(senha, args.senha)
+        .then(res => console.log(res))
+}))
+

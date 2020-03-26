@@ -1,1 +1,1 @@
-module.exports = mongoURL => require("./lib")(mongoURL);
+module.exports = mongoURL => require("./lib")(mongoURL)
