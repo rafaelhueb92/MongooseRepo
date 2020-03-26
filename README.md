@@ -9,8 +9,10 @@ It's a repository to simplify the mongoose Lib.
   - [Repository](#Repository)
   - [Pre requisites](#Pre-requisites)
 - [How To Use](#How-To-Use)
-- [Utils](#Utils)
+- [Utils](##Utils)
   - [Encryption](#Encryption)
+-[Types](##Types)
+  - [PointSchema](#PointSchema)
 
 # Quick Start
 
@@ -68,7 +70,7 @@ super(Person)
 }
 }
 
-# Utils
+## Utils
 
  Theres is a utils file that has funtions to help to use the lib,
 
@@ -79,3 +81,9 @@ super(Person)
 # Encryption
 
 To compare the encryption just use the function comparePassword().
+
+## Types
+
+# PointSchema
+
+A kind of schema used to location, you cant destruct it using atribute type from lib.
