@@ -5,7 +5,7 @@ const schema = {
     age: Number
 }
 
-const MONGO_URL = "mongodb+srv://adm:mongo123@cluster0-hbvci.mongodb.net/test?retryWrites=true&w=majority";
+const MONGO_URL = "";
 const db = require("./")(MONGO_URL);
 const Repository = require("./lib/repository");
 const utils = require("./lib/utils");
@@ -22,7 +22,7 @@ class PersonRepo extends Repository {
 const personRepo = new PersonRepo();
 const args = {
     name: "FINAL5",
-    senha: { value: "12345555" },
+    password: { value: "12345555" },
     age: 27
 };
 personRepo.insert(args).then(_ =>

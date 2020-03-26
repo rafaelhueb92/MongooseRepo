@@ -4,8 +4,7 @@
     "name": "Rafael Hueb",
     "email": "rafaelhueb92@gmail.com"
   },
-  "version": "1.0.3",
-  "main": "index.js",
+  "version": "1.0.5",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^4.0.1",
