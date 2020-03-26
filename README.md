@@ -10,9 +10,9 @@ It's a repository to simplify the mongoose Lib.
   - [Pre requisites](#Pre-requisites)
 - [How To Use](#How-To-Use)
 - [Utils](##Utils)
-  - [Encryption](#Encryption)
--[Types](##Types)
+  - [Encryption](#Encryption) -[Types](##Types)
   - [PointSchema](#PointSchema)
+  - [EncryptSchema](#EncryptSchema)
 
 # Quick Start
 
@@ -45,14 +45,6 @@ name:String,
 age:Number
 }
 
-To use a password encrypt just set the type your field equals "password" like this:
-
-{ 
-    ...
-        password:"password"
-    ...
-}
-
 const schemaOptions = {
 timeStamps:true
 }
@@ -72,11 +64,11 @@ super(Person)
 
 ## Utils
 
- Theres is a utils file that has funtions to help to use the lib,
+Theres is a utils file that has funtions to help to use the lib,
 
- to use then, just code like bellow:
+to use then, just code like bellow:
 
- const utils = require("simple-mongooserepo/lib/utils")
+const utils = require("simple-mongooserepo/lib/utils")
 
 # Encryption
 
@@ -86,4 +78,20 @@ To compare the encryption just use the function comparePassword().
 
 # PointSchema
 
-A kind of schema used to location, you cant destruct it using atribute type from lib.
+A type of schema used to location, you cant destruct it using atribute type from lib.
+
+# EncryptSchema
+
+A type of schema used to encrypt.
+
+To insert value in this type:
+
+{
+...
+password: {value:"123"}
+...
+}
+
+The same to retrieve:
+
+const { value } = response.password;
